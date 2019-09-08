@@ -1,0 +1,12 @@
+.name{
+    color:gray;
+    font-size: 18px;
+    padding: 5px;
+
+}
+.phone{
+    z-index: 95;
+    color: #aaaaaa;
+    font-size: 9px;
+    position: relative;
+}

@@ -1,0 +1,15 @@
+<!-- <mat-list>
+    <mat-list-item *ngFor="let item of contacts">
+         {{ item.firstName }}
+         <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list> -->
+
+<mat-action-list>
+        <button  mat-list-item *ngFor="let item of contacts">
+          <img *ngIf="item.image" matListAvatar src="item.image" alt="...">
+          <img *ngIf="!item.image" matListAvatar src="../../../assets/images/bl_816_avatar_race_neutral_man_empty_woman_male_female-512.png" alt="...">
+          <div class="name" matLine> {{item.firstName}} <span> {{item.lastName}} </span>           <div matLine class="phone">123</div> </div>
+          <mat-divider></mat-divider>
+        </button >
+        <mat-action-list>

@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container > * {
+    width: 100%;
+  }
+
+  .wrapper{
+      display: inline-block;
+  }
+
+    
+  .wrapper > * {
+    width: 100%;
+  }
+  .right-align {
+    text-align: right;
+  }
+
+  input.right-align {
+    -moz-appearance: textfield;
+  }
+
+  .phone{   
+      display: flex; 
+      flex-wrap: wrap;
+      justify-content: flex-start;
+  }

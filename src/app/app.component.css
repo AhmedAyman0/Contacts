@@ -1,0 +1,7 @@
+.app{
+    width: 50%;
+    display: inline-block;
+    border: 2px solid #aaa;
+    border-radius: 45px ;
+    padding: 20px;
+}
