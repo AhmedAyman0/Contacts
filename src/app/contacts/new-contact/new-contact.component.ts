@@ -30,7 +30,7 @@ export class NewContactComponent implements OnInit {
   }
   newContact(){
     let number="0"+this.cnt.mobileNumber;
-    const newContact= new Contact(this.cnt.firstName,this.cnt.lastName,number,this.cnt.email,this.cnt.image);
+    const newContact= new Contact(this.cnt.firstName,this.cnt.lastName,parseInt(number),this.cnt.email,this.cnt.image);
     console.log(this.cnt);
     this.conserv.newContact(newContact);
     this.router.navigateByUrl('contact-list')
