@@ -15,6 +15,7 @@
   .wrapper > * {
     width: 100%;
   }
+  
   .right-align {
     text-align: right;
   }
@@ -23,8 +24,37 @@
     -moz-appearance: textfield;
   }
 
+  input.no-spin::-webkit-outer-spin-button,
+input.no-spin::-webkit-inner-spin-button {
+  display: none;
+}
+
   .phone{   
       display: flex; 
       flex-wrap: wrap;
       justify-content: flex-start;
+  }
+
+  .success{
+    color: #FFFFFF;
+    width: 215px;
+    height: 54px;
+    font-size: 20px;
+    background-color: #22B682;
+    margin: 10px;
+  }
+
+  .fail{
+    color: #FFFFFF;
+    width: 215px;
+    height: 54px;
+    font-size: 20px;
+    background-color: #185AA6;
+    margin: 10px;
+  }
+  
+  img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
   }

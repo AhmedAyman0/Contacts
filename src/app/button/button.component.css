@@ -1,0 +1,11 @@
+
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: #aaa;
+}

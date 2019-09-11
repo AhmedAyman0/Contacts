@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { CdkTableModule } from "@angular/cdk/table";
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatTreeModule } from "@angular/material/tree";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -41,6 +42,7 @@ import {
 
 @NgModule({
   imports: [
+    AngularFontAwesomeModule,
     CommonModule,
     CdkTableModule,
     MatTreeModule,

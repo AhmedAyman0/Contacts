@@ -4,12 +4,63 @@
          <mat-divider></mat-divider>
     </mat-list-item>
 </mat-list> -->
+<div class="wrapper">
+  <app-button *ngFor="let letter of letters" (click)="goTo(letter)" [symbol]="letter"></app-button>
+
+</div>
 
 <mat-action-list>
-        <button  mat-list-item *ngFor="let item of contacts">
-          <img *ngIf="item.image" matListAvatar src="item.image" alt="...">
-          <img *ngIf="!item.image" matListAvatar src="../../../assets/images/bl_816_avatar_race_neutral_man_empty_woman_male_female-512.png" alt="...">
-          <div class="name" matLine> {{item.firstName}} <span> {{item.lastName}} </span>           <div matLine class="phone">123</div> </div>
-          <mat-divider></mat-divider>
-        </button >
-        <mat-action-list>
+  <div class="search">
+    <input (input)="filter($event)" class="nsearch" type="text" placeholder="&#xF002; Search"
+      style="font-family:Arial, FontAwesome" />
+  </div>
+  <div class="new">
+    <button mat-list-item (click)="newContact()">Add New Contact<div style="text-align: right !important;">
+        <fa name="plus" fixed="true"></fa>
+      </div>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <app-hline in="Lateset Contacts"></app-hline>
+  <mat-divider></mat-divider>
+  <button mat-list-item *ngFor="let item of rContacts | slice:0:2; let i=index">
+    <img *ngIf="item.image" matListAvatar src="item.image" alt="...">
+    <img *ngIf="!item.image" matListAvatar
+      src="../../../assets/images/bl_816_avatar_race_neutral_man_empty_woman_male_female-512.png" alt="...">
+    <div class="name" matLine> {{item.firstName}} <span> {{item.lastName}} </span>
+      <div matLine class="phone">123</div>
+    </div>
+    <mat-divider></mat-divider>
+  </button>
+  <div *ngIf="!isFiltered">
+    <div *ngFor="let item of dict | keyvalue" class={{item.key}} class="contacts">
+      <app-hline in="{{item.key}}"></app-hline>
+
+      <mat-divider></mat-divider>
+      <button mat-list-item *ngFor="let item of item.value">
+        <img *ngIf="item.image" matListAvatar src="item.image" alt="...">
+        <img *ngIf="!item.image" matListAvatar
+          src="../../../assets/images/bl_816_avatar_race_neutral_man_empty_woman_male_female-512.png" alt="...">
+        <div class="name" matLine> {{item.firstName}} <span> {{item.lastName}} </span>
+          <div matLine class="phone">{{item.mobileNumber}}</div>
+        </div>
+        <mat-divider></mat-divider>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="isFiltered">
+    <app-hline in=""></app-hline>
+
+    <mat-divider></mat-divider>
+    <button mat-list-item *ngFor="let item of filtered">
+      <img *ngIf="item.image" matListAvatar src="item.image" alt="...">
+      <img *ngIf="!item.image" matListAvatar
+        src="../../../assets/images/bl_816_avatar_race_neutral_man_empty_woman_male_female-512.png" alt="...">
+      <div class="name" matLine> {{item.firstName}} <span> {{item.lastName}} </span>
+        <div matLine class="phone">{{item.mobileNumber}}</div>
+      </div>
+      <mat-divider></mat-divider>
+    </button>
+
+  </div>
+  <mat-action-list>
